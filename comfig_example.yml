@@ -1,0 +1,9 @@
+# REPLACE INFO WITH YOUR OWN AND RENAME FILE TO config.yml
+gmail:
+  username: username
+  password: password
+email:
+  subject: subject line!
+  from_name: Your Name
+  body_file: mail.txt
+  csv_file: mail.csv
