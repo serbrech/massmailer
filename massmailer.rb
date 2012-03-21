@@ -22,6 +22,7 @@ def mail_body datarow
   datarow.headers.each do |h|
     content.gsub!("\{#{h}\}", datarow[h])
   end
+  content
 end
 
 def send_mass_mail datarow
@@ -31,9 +32,7 @@ def send_mass_mail datarow
     subject CONFIG['email']['subject']
     body    mail_body(datarow)
   end
-  response = mail.deliver!
-  p response
-  p "failed : #{response}" unless response.status == "250"
+  response = mail.deliver!  
   p "sent to #{datarow['name']}" if response.status == "250"  
 end
 
