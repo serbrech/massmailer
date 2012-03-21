@@ -34,7 +34,7 @@ def send_mass_mail datarow
   response = mail.deliver!
   p response
   p "failed : #{response}" unless response.status == "250"
-  p "sent to #{datarow['Name']}" if response.status == "250"  
+  p "sent to #{datarow['name']}" if response.status == "250"  
 end
 
 CSV.foreach(CONFIG['email']['csv_file'], :headers => true) do |row|
