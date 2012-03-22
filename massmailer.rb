@@ -22,7 +22,7 @@ def send_mass_mail datarow
     mail.charset = 'UTF-8'
     # puts mail_body(datarow)
 
-    # response = mail.deliver!
+    response = mail.deliver!
     puts "sent to #{datarow['Name']}".green
   else
     puts "failed to send to #{datarow['Name']} : #{datarow['Email']}!".red
